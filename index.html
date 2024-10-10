@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Receiver</title>
+</head>
+<body>
+
+    <h1>Received User Data</h1>
+
+    <!-- Data display section -->
+    <div id="receivedData">
+        <!-- JavaScript will insert data here -->
+    </div>
+
+    <script>
+        // LocalStorage se data lena
+        var name = localStorage.getItem("name");
+        var email = localStorage.getItem("email");
+        var age = localStorage.getItem("age");
+
+        // Data ko page mein display karna
+        var displayData = document.getElementById("receivedData");
+        if (name && email && age) {
+            displayData.innerHTML = "<p><strong>Name:</strong> " + name + "</p>" +
+                                    "<p><strong>Email:</strong> " + email + "</p>" +
+                                    "<p><strong>Age:</strong> " + age + "</p>";
+        } else {
+            displayData.innerHTML = "<p>No data received.</p>";
+        }
+
+        // LocalStorage ko clear karna (optional)
+        localStorage.clear();
+    </script>
+
+</body>
+</html>
